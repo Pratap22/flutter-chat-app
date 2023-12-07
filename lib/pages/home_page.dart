@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:test_flutter/helper/helper_function.dart';
 import 'package:test_flutter/pages/auth/login_page.dart';
+import 'package:test_flutter/pages/profile_page.dart';
+import 'package:test_flutter/pages/search_page.dart';
 import 'package:test_flutter/service/auth_service.dart';
 import 'package:test_flutter/service/database_service.dart';
 import 'package:test_flutter/widgets/group_tile.dart';
@@ -65,7 +67,7 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
               onPressed: () {
-                // nextScreen(context, const SearchPage());
+                nextScreen(context, const SearchPage());
               },
               icon: const Icon(
                 Icons.search,
@@ -117,12 +119,12 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             onTap: () {
-              // nextScreenReplace(
-              //     context,
-              //     ProfilePage(
-              //       userName: userName,
-              //       email: email,
-              //     ));
+              nextScreenReplace(
+                  context,
+                  ProfilePage(
+                    userName: userName,
+                    email: email,
+                  ));
             },
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
